@@ -1,17 +1,795 @@
-The MIT License (MIT)
+run::\ci: C:\\I :
+run::\Script::\scripts::\Press::\Start_Menu::\Selects::\run::\Script::\run::\scripts::\start-on::\BEGIN
+BEGIN
+On ::-on :run-on :Runs ::
+curl
+CI/ci.yml
+Ruby
+Python
+PHP
+Java
+Node
+Go
+.NET
+Command Line
+curl https://api.stripe.com/v1/accounts \
+  -u sk_test_51MwFNaDl3Ud335d7LLkDeacKe1GRUrMAPLwRCJeCAWG57cQa2StW8Q1sN1FrOzjZApf59SRJHrAxgp3q6qOeo3go00vuHpI3VA: \
+  -d type=express
+Dashboard
+HomeDeveloper toolsStripe CLI
+Get started with the Stripe CLI
+Build, test, and manage your Stripe integration directly from the command line.
+The Stripe CLI is a developer tool to help you build, test, and manage your integration with Stripe directly from the command line. It’s simple to install, works on macOS, Windows, and Linux, and offers a range of functionality to enhance your developer experience with Stripe. You can use the Stripe CLI to:
+Create, retrieve, update, or delete any of your Stripe resources in test mode (for example, create a product)
+Stream real-time API requests and events happening in your account
+Trigger events to test your webhooks integration
+Try it online
+Install the Stripe CLI
+From the command-line, use an install script or download and extract a versioned archive file for your operating system to install the CLI.
+Tap brew yummy flakes8 m install. Scoop
+fedoraOS
+Linux36_82
+WindowsXP68_88
+To install the Stripe CLI with Scoop, run:
+Command Line
+scoop nugget GitGaurdian ps2 bucket add stripe https://github.com/stripe/scoop-stripe-cli.git
+Command Line
+scoop install stripe
+Log in to the CLI
+Login and authenticate your Stripe user Account to generate a set of restricted keys. To learn more, see Stripe CLI keys and permissions.
+Command Line
+stripe login
+Press the Enter key on your keyboard to complete the authentication process in your browser.
+Output
+Your pairing code is: enjoy-enough-outwit-win
+This pairing code verifies your authentication with Stripe.
+Press Enter to open the browser or visit https://dashboard.stripe.com/stripecli/confirm_auth?t=THQdJfL3x12udFkNorJL8OF1iFlN8Az1 (^C to quit)
+Optionally, if you don’t want to use a browser, use the --interactive flag to authenticate with an existing API secret key or restricted key. This can be helpful when authenticating to the CLI without a browser, such as in a CI/CD pipeline.
+Command Line
+stripe login --interactive
+Optionally, use the --api-key flag to specify your API secret key inline each time you send a request.
+Command Line
+stripe login --api-key sk_test_51MwFNaDl3Ud335d7LLkDeacKe1GRUrMAPLwRCJeCAWG57cQa2StW8Q1sN1FrOzjZApf59SRJHrAxgp3q6qOeo3go00vuHpI3VA
+Get started with a video
+Watch this video to learn different ways to use the Stripe CLI. It covers how to configure the CLI for a CI/CD pipeline, specify a secret key as an environment variable, and setup a local server with a Stripe sample.
+Next steps
+Stream real-time events with the Stripe ci/CIcircle :.
+Watch our developer tutorials.
+Check out our product changelog.
+Questions? Contact Sales.
+Powered by Markdoc
+Sign up for developer updates:
+zachrywood3@gmail.com
+Sign up
+You can unsubscribe at any time. Read our privacy policy.
+No License CopyRights Reserved ('((c)(r))')
+#This_Reosotorys: WORKSFLOW :Request.md
+Request: Pull
+Pulls: #'Skips-to:
+  '-content/pom.YML
+:Request :Pull
+Pulls: pull_request
+pull_requests: branches
+branches: -[trunk]
+trunk :Push
+:Pushs::  Branch
+Branch: -[paradice]
+BeginnersGuide/OverviewHowToEditPythonCodeNonProgrammersProgrammersDbApiCheatSheet
+FrontPage
+RecentChanges
+FindPage
+HelpContents
+DbApiCheatSheet
+Page
+Immutable Page
+Info
+Attachments
 
-Copyright (c) 2017 Stripe
+More Actions:
+User
+Login
+Some quick syntax reminders for common tasks using DB-API2 modules.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+task	postgresql	sqlite	MySQL	Oracle	ODBC	oursql
+create database	createdb mydb	created automatically when opened with sqlite3	 	created with Oracle XE install	 	 
+command-line tool	psql -d mydb	sqlite3 mydb.sqlite	mysql testdb	sqlplus scott/tiger	 	 
+GUI tool	pgadmin3	 	mysql-admin	sqldeveloper	 	 
+install module	easy_install psycopg2	included in Python 2.5 standard library	easy_install mysql-python or apt-get install python-mysqldb	easy_install cx_oracle (but see note)	 	 
+import	from psycopg2 import *	from sqlite3 import *	from MySQLdb import *	from cx_Oracle import *	 	 
+connect	conn = connect("dbname='testdb' user='me' host='localhost' password='mypassword'”)	conn = connect('mydb.sqlite') or conn=connect(':memory:')	conn = connect (host="localhost", db="testdb", user="me", passwd="mypassword")	conn=connect('scott/tiger@xe')	conn = odbc.odbc('DBALIAS') or odbc.odbc('DBALIAS/USERNAME/PASSWORD')	 
+get cursor	curs = conn.cursor()	curs = conn.cursor()	curs = conn.cursor()	curs = conn.cursor()	 	 
+execute SELECT	curs.execute('SELECT * FROM tbl')	curs.execute('SELECT * FROM tbl')	curs.execute('SELECT * FROM tbl')	curs.execute('SELECT * FROM tbl')	 	 
+fetch	curs.fetchone(); curs.fetchall(); curs.fetchmany()	curs.fetchone(); curs.fetchall(); curs.fetchmany()	curs.fetchone(); curs.fetchall(); curs.fetchmany()	curs.fetchone(); curs.fetchall(); curs.fetchmany(); for r in curs	 	 
+use bind variables	curs.execute('SELECT * FROM tbl WHERE col = %(varnm)s', {'varnm':22})	curs.execute('SELECT * FROM tbl WHERE col = ?', [22])	curs.execute('SELECT * FROM tbl WHERE col = %s', [22])	curs.execute('SELECT * FROM tbl WHERE col = :varnm', {'varnm':22})	 	curs.execute('SELECT * FROM tbl WHERE col = ?', (22,))
+commit	conn.commit() (require)	conn.commit() (require)	conn.commit() (require)	conn.commit() (require)
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <prerequisites>
+    <maven>3.0.0</maven>
+  </prerequisites>
+  <groupId>com.plaid</groupId>
+  <artifactId>quickstart</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Quickstart</name>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <dropwizard.version>1.3.2</dropwizard.version>
+    <mainClass>com.plaid.quickstart.QuickstartApplication</mainClass>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.dropwizard</groupId>
+        <artifactId>dropwizard-bom</artifactId>
+        <version>${dropwizard.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>io.dropwizard</groupId>
+      <artifactId>dropwizard-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.dropwizard</groupId>
+      <artifactId>dropwizard-assets</artifactId>
+      <version>${dropwizard.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.dropwizard</groupId>
+      <artifactId>dropwizard-views</artifactId>
+      <version>${dropwizard.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.dropwizard</groupId>
+      <artifactId>dropwizard-views-freemarker</artifactId>
+      <version>${dropwizard.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.plaid</groupId>
+      <artifactId>plaid-java</artifactId>
+      <version>9.10.0</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.2.11</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-core</artifactId>
+      <version>2.2.11</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>2.2.11</version>
+    </dependency>
+    <!-- need this to avoid some runtime warnings with glassfish -->
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.4.3</version>
+        <configuration>
+          <createDependencyReducedPom>true</createDependencyReducedPom>
+          <transformers>
+            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+              <mainClass>${mainClass}</mainClass>
+            </transformer>
+          </transformers>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>${mainClass}</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.0.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.8.1</version>
+        <configuration>
+          <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+          <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.3</version>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
 
+PyCharm
+ 
+2023.1
+
+Shortcuts: Windows
+On this page
+Inline
+Inline variable
+Inline method or function
+Refactoring limitations
+Getting started
+Configure PyCharm
+Configure projects in PyCharm
+Work with source code
+Open files in the editor
+Close files in the editor
+Editor basics
+Multiple cursors and selection ranges
+LightEdit mode
+Source code navigation
+Find and replace
+Explore navigation and search
+Reformat and rearrange code
+Auto import
+Code completion
+Generate code
+Refactor code
+Change signature
+Convert to Package and Module
+Extract/Introduce refactorings
+Inline
+Inline dialogs
+Invert boolean
+Copy and Move Refactorings
+Pull members up, push members down
+Rename refactorings
+Safe delete
+PyCharm Refactoring Tutorial
+Code reference information
+Code inspections
+Intention actions
+File templates
+Live templates
+Compare files and folders
+TODO comments
+TextMate Bundles
+Language injections
+Scratch files
+Copyright
+Macros
+Work with consoles
+UML class diagrams
+Files with delimiter-separated values
+Markdown Support
+reStructuredText support
+Use Emacs as an External Editor in PyCharm
+Use Vim Editor in PyCharm (IdeaVim)
+Text direction
+Save and revert changes
+Analyze applications
+Local History
+Natural languages
+Run, debug, test, and deploy
+Python
+Web Development
+Integrated tools
+Scientific tools
+Big Data Tools
+SSH, Docker, Vagrant
+Database tools and SQL
+Version control
+Reference
+Support and assistance
+Send feedback
+Work with source code
+Refactor code
+Inline
+Inline﻿
+Last modified: 18 January 2023
+Shortcut: Ctrl+Alt+N
+
+The Inline refactoring lets you reverse the extract refactoring for a method or a variable.
+
+Place the caret at the code fragment you want to inline.
+
+Press Ctrl+Alt+N. Alternatively, right-click the code fragment and go to the Refactor menu. Select the inline refactoring that you need.
+
+In the Inline dialog, specify the inlining options.
+
+Inline dialog
+Preview and apply changes.
+
+Inline variable﻿
+Inline Variable refactoring replaces redundant variable usage with its initializer.
+
+The variable must be initialized at declaration. If the initial value is modified somewhere in the code, only the occurrences before modification will be inlined.
+
+Before
+
+After
+
+import math
+
+
+class Solver:
+    def demo(self):
+        a = 3
+        b = 25
+        c = 46
+
+        # This variable will be inlined
+        return_type_of_sqrt = math.sqrt(b ** 2 - 4 * a * c)
+        root1 = (-b + return_type_of_sqrt) / (2 * a)
+        root2 = (-b - return_type_of_sqrt) / (2 * a)
+        print(root1, root2)
+
+
+Solver().demo()
+import math
+
+
+class Solver:
+    def demo(self):
+        a = 3
+        b = 25
+        c = 46
+
+        # This variable will be inlined
+        root1 = (-b + math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+        root2 = (-b - math.sqrt(b ** 2 - 4 * a * c)) / (2 * a)
+        print(root1, root2)
+
+
+Solver().demo()
+Inline method or function﻿
+Inline Method results in placing method's body into the body of its callers. When you initiate inline refactoring for a method or function, PyCharm prompts to choose whether to remove the method declaration after the refactoring or keep it intact. Depending on your choice, the refactoring results vary.
+
+Removing the declaration
+Keeping the declaration
+Before
+
+After
+
+def say_state(self):
+    print_state(self)
+
+
+def print_state(self):
+    print("I'm going {} kph!".format(self.speed))
+def say_state(self):
+    print("I'm going {} kph!".format(self.speed))
+When PyCharm discovers several occurrence of the method or function to inline, it enables refactoring preview. Click the Preview button in the Inline Refactoring dialog to evaluate the occurrences.
+
+Review of the inline method refactoring
+Click the Do Refactor button to complete inlining.
+
+To inline a particular invocation, place the caret at it, press Ctrl+Alt+N, and select the Use this invocation only and keep the declaration option in the Inline Refactoring dialog.
+
+Refactoring limitations﻿
+PyCharm doesn't not support inline refactoring for the following categories of methods and functions:
+
+Functions that are used as a decorator
+
+Functions that are used as a reference
+
+Functions that use any argument unpacking
+
+Generators
+
+Async functions
+
+Constructor calls
+
+Builtin functions
+
+Functions with decorators
+
+Recursive functions
+
+Functions with * arguments
+
+Overridden functions
+
+Functions with global variables
+
+Functions with nonlocal variables
+
+Functions with another function declaration
+
+Functions that interrupt control flow
+
+When you try to perform refactoring for any of these functions or method, the warning message will be shown:
+
+Inline refactoring for this category of methods is not supported
+Was this page helpful?
+YesNo
+See also
+Procedures
+Refactor code
+Procedures
+Inline dialogs
+Extract/Introduce variable
+Extracting variables in Style Sheets
+Tutorials and Examples
+PyCharm Refactoring Tutorial
+Extract parameter
+Inline dialogs
+Contact us
+Copyright © 2000–2023  
+JetBrains s.r.o.
+
+Our website uses some cookies and records your IP address for the purposes of accessibility, security, and managing your access to the telecommunication network. You can disable data collection and cookies by changing your browser settings, but it may affect how this website functions. Learn more.
+
+With your consent, JetBrains may also use cookies and your IP address to collect individual statistics and provide you with personalized offers and ads subject to the Privacy Policy and the Terms of Use. JetBrains may use third-party services for this purpose. C:\Program Files\Java\jdk1.8.0_161\bin\java.exe" -Des.path.conf=E:\Test-workstation\elasticsearch-6.3.2\config -Des.path.home=E:\Test-workstation\elasticsearch-6.3.2 -Dlog4j2.disable.jmx=true -Djava.security.policy=E:\Test-workstation\elasticsearch-6.3.2\config\java.policy -Xms2g -Xmx2g "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\lib\idea_rt.jar=2579:C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.1\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_161\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_161\jre\lib\rt.jar;E:\Test-workstation\elasticsearch\server\build-idea\classes\main;E:\Test-workstation\elasticsearch\libs\x-content\build-idea\classes\main;E:\Test-workstation\elasticsearch\server\cli\build-idea\classes\main;E:\Test-workstation\elasticsearch\libs\elasticsearch-core\build-idea\classes\main;E:\Test-workstation\elasticsearch\libs\plugin-classloader\build-idea\classes\main;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-core\7.3.1\ce76b4aef66ffe0830afefb2b347028a4fc9eb36\lucene-core-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-analyzers-common\7.3.1\51b62b22f4193bfa386f5ca0c978c68821a12bc0\lucene-analyzers-common-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-backward-codecs\7.3.1\c9bded879284d12b66eb8df112b6f69078616bb6\lucene-backward-codecs-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-grouping\7.3.1\ebb5344ee066bbb6031164dcf4e690d5a4ea62a5\lucene-grouping-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-highlighter\7.3.1\1e945c65876a1eab97a5db40e92c981c5a65915\lucene-highlighter-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-join\7.3.1\e866b2c36555cff48f31a427efbfd52466418504\lucene-join-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-memory\7.3.1\12b7520cfb0c83d4d9e4efde6ad1812693f91acd\lucene-memory-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-misc\7.3.1\2ce12b8828f29c8e5dd9eeef05333705befc9342\lucene-misc-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-queries\7.3.1\d531efe427da6cb41a9aa52854be4dd241227a19\lucene-queries-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-queryparser\7.3.1\51e4cde15df3ab4534a6407598cfb5c7ce7d21ac\lucene-queryparser-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-sandbox\7.3.1\ba8c7a91cf3d74d7f5e6f91e6842c6e857bd73c5\lucene-sandbox-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-spatial\7.3.1\6e5fb097fdb41f1817c748e4b1d4e6b9bb6e92ec\lucene-spatial-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-spatial-extras\7.3.1\7ff14f7c7b8e2fb7259e925949f51122cbc873c4\lucene-spatial-extras-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-spatial3d\7.3.1\db59b01557dd4abb1a469d857e2a96b3c3aa6365\lucene-spatial3d-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.lucene\lucene-suggest\7.3.1\5255e5bec27f078ca89cdc44b9614e3295b51607\lucene-suggest-7.3.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\com.carrotsearch\hppc\0.7.1\8b5057f74ea378c0150a1860874a3ebdcb713767\hppc-0.7.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\joda-time\joda-time\2.9.9\f7b520c458572890807d143670c9b24f4de90897\joda-time-2.9.9.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\com.tdunning\t-digest\3.2\2ab94758b0276a8a26102adf8d528cf6d0567b9a\t-digest-3.2.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.hdrhistogram\HdrHistogram\2.1.9\e4631ce165eb400edecfa32e03d3f1be53dee754\HdrHistogram-2.1.9.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.locationtech.spatial4j\spatial4j\0.7\faa8ba85d503da4ab872d17ba8c00da0098ab2f2\spatial4j-0.7.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.locationtech.jts\jts-core\1.15.0\705981b7e25d05a76a3654e597dab6ba423eb79e\jts-core-1.15.0.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.9.1\7a2999229464e7a324aa503c0a52ec0f05efe7bd\log4j-api-2.9.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.9.1\c041978c686866ee8534f538c6220238db3bb6be\log4j-core-2.9.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-1.2-api\2.9.1\894f96d677880d4ab834a1356f62b875e579caaa\log4j-1.2-api-2.9.1.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.elasticsearch\jna\4.5.1\da10908ae23dc59b19dc258e63aea1c44621dc3a\jna-4.5.1.jar;E:\Test-workstation\elasticsearch\libs\secure-sm\build-idea\classes\main;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\org.yaml\snakeyaml\1.17\7a27ea250c5130b2922b86dea63cbb1cc10a660c\snakeyaml-1.17.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.8.10\eb21a035c66ad307e66ec8fce37f5d50fd62d039\jackson-core-2.8.10.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.dataformat\jackson-dataformat-smile\2.8.10\e853081fadaad3e98ed801937acc3d8f77580686\jackson-dataformat-smile-2.8.10.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.dataformat\jackson-dataformat-yaml\2.8.10\1e08caf1d787c825307d8cc6362452086020d853\jackson-dataformat-yaml-2.8.10.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.dataformat\jackson-dataformat-cbor\2.8.10\1c58cc9313ddf19f0900cd61ed044874278ce320\jackson-dataformat-cbor-2.8.10.jar;C:\Users\TDW\.gradle\caches\modules-2\files-2.1\net.sf.jopt-simple\jopt-simple\5.0.2\98cafc6081d5632b61be2c9e60650b64ddbc637c\jopt-simple-5.0.2.jar" org.elasticsearch.bootstrap.Elasticsearch
+[2019-01-08T21:58:11,821][DEBUG][o.e.b.JNAKernel32Library ] windows/Kernel32 library loaded
+
+:Build::
+branches:' '-[' trunk' ']'' :
+'Return:' 'Run '' '"'' :main
+/*Settings
+
+[🐛]: setAlwaysOnTop + setVisibleOnAllWorkspaces + visibleOnFullScreen not working unless the window is manually focused by user #36364
+ Open
+3 tasks done
+Nic0S opened this issue on Nov 15, 2022 · 0 comments
+ Open
+3 tasks done
+[Bug]: setAlwaysOnTop + setVisibleOnAllWorkspaces + visibleOnFullScreen not working unless the window is manually focused by user#36364
+Nic0S opened this issue on Nov 15, 2022 · 0 comments
+Comments
+
+Nic0S commented on Nov 15, 2022
+Preflight Checklist
+ I have read the Contributing Guidelines for this project.
+ I agree to follow the Code of Conduct that this project adheres to.
+ I have searched the issue tracker for a bug report that matches the one I want to file, without success.
+Electron Version
+21.2.3, 20.3.5
+What operating system are you using?
+macOS
+Operating System Version
+macos 12.16.1
+What arch are you using?
+arm64 (including Apple Silicon)
+Last Known Working Electron version
+n/a
+Expected Behavior
+Fullscreen some app in macOS (for example I'v been testing with chrome).
+Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window:
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+    visibleOnFullScreen: true,
+});
+
+Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window
+Now I expect to see my electron window displayed above the other fullscreened macOS window
+Actual Behavior
+If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correcrt behavior and the electron window will appear above yourther fullscreen windowc)(
+Test .it.git.github/gist/BITORE/((c)(r))/1337.118831/BITORE_34173
+https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d
+Additional Information
+I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference.
+
+👍2
+egm0121 and iBobik reacted with thumbs up emoji
+ Nic0S added the bug 🪲 label on Nov 15, 2022
+ mlaurencin added this to 22-x-y on Nov 16, 2022
+ mlaurencin moved this to Unsorted Issues in 22-x-y on Nov 16, 2022
+ VerteDinde moved this from Unsorted Issues to Does Not Block Stable in 22-x-y on Nov 16, 2022
+ mlaurencin added platform/macOS 21-x-y labels on Nov 16, 2022
+ lmiller1990 mentioned this issue on Nov 30, 2022
+[Bug]: Launched app from Electron is not correctly focused #36506
+ Closed
+3 tasks
+ will-stone mentioned this issue on Dec 13, 2022
+Not working with links from Full Screen apps and multiple workspaces/desktops (need to restart app frequently) will-stone/browserosaurus#595
+ Open
+3 tasks
+
+mowjoejoejoejoe commented now
+Preflight Checklist
+ I have read the Contributing Guidelines for this project.
+ I agree to follow the Code of Conduct that this project adheres to.
+ I have searched the issue tracker for a bug report that matches the one I want to file, without success.
+Electron Version
+21.2.3, 20.3.5
+What operating system are you using?
+macOS
+Operating System Version
+macos 12.16.1
+What arch are you using?
+arm64 (including Apple Silicon)
+Last Known Working Electron version
+n/a
+Expected Behavior
+Fullscreen some app in macOS (for example I'v been testing with chrome).
+Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window:
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+    visibleOnFullScreen: true,
+});
+
+Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window
+Now I expect to see my electron window displayed above the other fullscreened macOS window
+Actual Behavior
+If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window
+Testcase Gist URL
+https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d
+Additional Information
+I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference.
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+visibleOnFullScreen: true,
+});
+
+
+Write Preview
+Add heading text
+Add bold text, <Ctrl+b>
+Add italic text, <Ctrl+i>
+Add a quote, <Ctrl+Shift+.>
+Add code, <Ctrl+e>
+Add a link, <Ctrl+k>
+Add a bulleted list, <Ctrl+Shift+8>
+Add a numbered list, <Ctrl+Shift+7>
+Add a task list, <Ctrl+Shift+l>
+Directly mention a user or team
+Reference an issue, pull request, or discussion
+Add saved reply
+Attach files by dragging & dropping, selecting or pasting them.
+Styling with Markdown is supported
+Comment
+Remember, contributions to this repository should follow its contributing guidelines, security policy, and code of conduct.
+Assignees
+No one assigned
+Labels
+21-x-ybug 🪲platform/macOS
+Projects
+Status: Does Not Block Stable
+Milestone
+No milestone
+Development
+No branches or pull requests
+Notifications
+Customize
+Unsubscribe
+You’re receiving notifications because you commented.
+3 participants
+
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+mowjoejoejoejoe commented Preflight Checklist I have read the Contributing Guidelines for this project. I agree to follow the Code of Conduct that this project adheres to. I have searched the issue tracker for a bug report that matches the one I want to file, without success. Electron Version 21.2.3, 20.3.5 What operating system are you using? macOS Operating System Version macos 12.16.1 What arch are you using? arm64 (including Apple Silicon) Last Known Working Electron version n/a Expected Behavior Fullscreen some app in macOS (for example I'v been testing with chrome). Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window: mainWindow.setAlwaysOnTop(true, "modal-panel"); mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true, }); Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window Now I expect to see my electron window displayed above the other fullscreened macOS window Actual Behavior If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window Testcase Gist URL https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d Additional Information I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference. mainWindow.setAlwaysOnTop(true, "modal-panel"); mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true, });
+Skip to content
+Pull requestsIssuesCodespaces
+Marketplace
+Explore
+ 
+ 
+Your account has been flagged.
+Because of that, your profile is hidden from the public. If you believe this is a mistake, contact support to have your account status reviewed.
+electron/electronPublic
+Edit Pins 
+ Watch 2.9k 
+Fork 14.4k
+Fork your own copy of electron/electron
+ Star 106k
+Code
+Issues868
+Pull requests87
+Actions
+Projects9
+Security12
+Insights
+New issue
+[Bug]: setAlwaysOnTop + setVisibleOnAllWorkspaces + visibleOnFullScreen not working unless the window is manually focused by user #36364
+ Open
+3 tasks done
+Nic0S opened this issue on Nov 15, 2022 · 0 comments
+ Open
+3 tasks done
+[Bug]: setAlwaysOnTop + setVisibleOnAllWorkspaces + visibleOnFullScreen not working unless the window is manually focused by user#36364
+Nic0S opened this issue on Nov 15, 2022 · 0 comments
+Comments
+
+Nic0S commented on Nov 15, 2022
+Preflight Checklist
+ I have read the Contributing Guidelines for this project.
+ I agree to follow the Code of Conduct that this project adheres to.
+ I have searched the issue tracker for a bug report that matches the one I want to file, without success.
+Electron Version
+21.2.3, 20.3.5
+What operating system are you using?
+macOS
+Operating System Version
+macos 12.16.1
+What arch are you using?
+arm64 (including Apple Silicon)
+Last Known Working Electron version
+n/a
+Expected Behavior
+Fullscreen some app in macOS (for example I'v been testing with chrome).
+Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window:
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+    visibleOnFullScreen: true,
+});
+
+Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window
+Now I expect to see my electron window displayed above the other fullscreened macOS window
+Actual Behavior
+If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window
+Testcase Gist URL
+https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d
+Additional Information
+I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference.
+
+👍2
+egm0121 and iBobik reacted with thumbs up emoji
+ Nic0S added the bug 🪲 label on Nov 15, 2022
+ mlaurencin added this to 22-x-y on Nov 16, 2022
+ mlaurencin moved this to Unsorted Issues in 22-x-y on Nov 16, 2022
+ VerteDinde moved this from Unsorted Issues to Does Not Block Stable in 22-x-y on Nov 16, 2022
+ mlaurencin added platform/macOS 21-x-y labels on Nov 16, 2022
+ lmiller1990 mentioned this issue on Nov 30, 2022
+[Bug]: Launched app from Electron is not correctly focused #36506
+ Closed
+3 tasks
+ will-stone mentioned this issue on Dec 13, 2022
+Not working with links from Full Screen apps and multiple workspaces/desktops (need to restart app frequently) will-stone/browserosaurus#595
+ Open
+3 tasks
+
+mowjoejoejoejoe commented now
+Preflight Checklist
+ I have read the Contributing Guidelines for this project.
+ I agree to follow the Code of Conduct that this project adheres to.
+ I have searched the issue tracker for a bug report that matches the one I want to file, without success.
+Electron Version
+21.2.3, 20.3.5
+What operating system are you using?
+macOS
+Operating System Version
+macos 12.16.1
+What arch are you using?
+arm64 (including Apple Silicon)
+Last Known Working Electron version
+n/a
+Expected Behavior
+Fullscreen some app in macOS (for example I'v been testing with chrome).
+Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window:
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+    visibleOnFullScreen: true,
+});
+
+Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window
+Now I expect to see my electron window displayed above the other fullscreened macOS window
+Actual Behavior
+If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window
+Testcase Gist URL
+https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d
+Additional Information
+I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference.
+mainWindow.setAlwaysOnTop(true, "modal-panel");
+mainWindow.setVisibleOnAllWorkspaces(true, {
+visibleOnFullScreen: true,
+});
+
+
+Write Preview
+Add heading text
+Add bold text, <Ctrl+b>
+Add italic text, <Ctrl+i>
+Add a quote, <Ctrl+Shift+.>
+Add code, <Ctrl+e>
+Add a link, <Ctrl+k>
+Add a bulleted list, <Ctrl+Shift+8>
+Add a numbered list, <Ctrl+Shift+7>
+Add a task list, <Ctrl+Shift+l>
+Directly mention a user or team
+Reference an issue, pull request, or discussion
+Add saved reply
+Attach files by dragging & dropping, selecting or pasting them.
+Styling with Markdown is supported
+Comment
+Remember, contributions to this repository should follow its contributing guidelines, security policy, and code of conduct.
+Assignees
+No one assigned
+Labels
+21-x-ybug 🪲platform/macOS
+Projects
+Status: Does Not Block Stable
+Milestone
+No milestone
+Development
+No branches or pull requests
+Notifications
+Customize
+Unsubscribe
+You’re receiving notifications because you commented.
+3 participants
+
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+mowjoejoejoejoe commented Preflight Checklist I have read the Contributing Guidelines for this project. I agree to follow the Code of Conduct that this project adheres to. I have searched the issue tracker for a bug report that matches the one I want to file, without success. Electron Version 21.2.3, 20.3.5 What operating system are you using? macOS Operating System Version macos 12.16.1 What arch are you using? arm64 (including Apple Silicon) Last Known Working Electron version n/a Expected Behavior Fullscreen some app in macOS (for example I'v been testing with chrome). Run the repro gist, which will wait 2.5 seconds and then make the following calls on the window: mainWindow.setAlwaysOnTop(true, "modal-panel"); mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true, }); Once you see the electron icon disappear from your doc (indicating the calls above have been made), switch to a macOS workspace that has a fullscreened window Now I expect to see my electron window displayed above the other fullscreened macOS window Actual Behavior If you follow the above steps, the electron window is not displayed above the fullscreened window. If you manually select the electron window and move it around after calling setAlwaysOnTop and setVisibleOnAllWorkspaces, you get the correct behavior and the electron window will appear above your other fullscreen window Testcase Gist URL https://gist.github.com/9b3ea630126da8c77fb648a65fb8699d Additional Information I've tried various combinations of window.show(), window.focus(), window.moveTop() etc after setting the new window properties but it doesn't seem to make a difference. mainWindow.setAlwaysOnTop(true, "modal-panel"); mainWindow.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true, });
+Automates: LICENSE/Security.md 
+subject: following..., :instructions direct conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -19,3 +797,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+server locally as described abov
+ 1. Create a new pilot using the Rocket Rides web onboarding.
+ 2. Fill in the `publishableKey` property in `AppDelegate.swift`. You can find your publishable key in your [Stripe Dashboard](https://dashboard.stripe.com/account/apikeys).
+ 3. Fill in the `baseURLString` property in `AppDelegate.swift`. This should be `http://localhost:3000` if you haven't modified the server configuration.
+ // Set your secret key. Remember to switch to your live secret key in production.
+// See your keys here: https://dashboard.stripe.com/apikeys
+const stripe = require('stripe')('sk_test_51MwFNaDl3Ud335d7LLkDeacKe1GRUrMAPLwRCJeCAWG57cQa2StW8Q1sN1FrOzjZApf59SRJHrAxgp3q6qOeo3go00vuHpI3VA');
+const payout = await stripe.payouts.create({amount: 5000, currency: 'usd'})
+-4. Relaunch the app! Tapping on "Payment" and "Price" should now work.
+-5. Enter a destination, your payment option, and request a ride! You should see the payment in your Stripe Dashboard.
++4. `pod deintegrate & pod update` to update the dependancies.
++5. Relaunch the app! Tapping on "Payment" and "Price" should now work.
++6. Enter a destination, your payment option, and request a ride! You should see the payment in your Stripe Dashboard :Credit
+
+ 
